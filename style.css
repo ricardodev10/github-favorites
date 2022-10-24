@@ -56,8 +56,8 @@ input {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 16px;
-    gap: 10px;
+    padding: 1.6rem;
+    gap: 1rem;
 
     width: 46.2rem;
     height: 4.8rem;
@@ -125,7 +125,7 @@ table thead tr {
     text-align: left;
 }
 
-table thead tr > th:nth-child(1){
+table thead tr>th:nth-child(1) {
     padding-left: 4rem;
 }
 
@@ -197,30 +197,65 @@ table tbody tr td.action span {
     cursor: pointer;
 }
 
-/* =============== mobile ===============
-header {
-    display: flex;
-    flex-wrap: wrap;
+@media (max-width: 767px) {
+    #app {
+        width: 34rem;
+        padding: 0;
+    }
+
+    header {
+        flex-direction: column;
+        width: 34rem;
+    }
+
+    input {
+        width: 25rem;
+        margin: 3rem 0 1rem;
+    }
+
+    button {
+        width: 25rem;
+        margin-left: 0;
+    }
+
+    table {
+        width: 34rem;
+        font-size: 1rem;
+    }
+
+    table thead tr>th:nth-child(1) {
+        padding-left: 1rem;
+    }
+
+    thead tr>th:nth-child(1),
+    tbody tr>td:nth-child(1) {
+        width: 15rem;
+    }
+
+    thead tr>th:nth-child(2),
+    tbody tr>td:nth-child(2) {
+        width: 5rem;
+    }
+
+    thead tr>th:nth-child(3),
+    tbody tr>td:nth-child(3) {
+        width: 5rem;
+    }
+
+    thead tr>th:nth-child(4),
+    tbody tr>td:nth-child(4) {
+        width: 5rem;
+    }
+
+    td.user {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        padding: 2.4rem 1rem;
+    }
+
+    td.user img {
+        width: 4rem;
+        height: 4rem;
+    }
 }
-
-input {
-    width: 74%;
-    height: 3rem;
-
-    padding: 1rem;
-    margin-right: 2%;
-}
-
-.hide {
-    display: none;
-}
-
-button {
-    width: 24%;
-    height: 3rem;
-    padding: .8rem;
-}
-
-table {
-    margin-top: 2rem;
-} */
