@@ -50,6 +50,7 @@ body {
 header {
     display: flex;
     align-items: center;
+    margin-bottom: 6rem;
 }
 
 input {
@@ -99,10 +100,16 @@ button:hover {
     transition: 400ms;
 }
 
+main {
+    overflow: auto;
+    max-height: 65vh;
+    height: 60rem;
+}
+
 table {
     border-collapse: collapse;
 
-    margin: 6rem auto;
+    margin: 0 auto;
     width: 100%;
 
     font-size: 2rem;
@@ -197,6 +204,36 @@ table tbody tr td.action span {
     cursor: pointer;
 }
 
+table tbody td.empty-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    color: var(--bs-color);
+    width: 108rem;
+    height: 40rem;
+
+    position: absolute;
+    background-color: var(--bg-input);
+
+    font-size: clamp(2rem, 2rem + 0.5vw, 4rem);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-button);
+    border-radius: 6px;
+}
+
 @media (max-width: 767px) {
     #app {
         width: 34rem;
@@ -257,5 +294,14 @@ table tbody tr td.action span {
     td.user img {
         width: 4rem;
         height: 4rem;
+    }
+
+    table tbody td.empty-row {
+        width: 34rem;
+        height: 32rem;
+    }
+
+    main {
+        height: 30rem;
     }
 }

@@ -29,7 +29,7 @@ export class Favorites {
             }
 
             this.entries = [user, ...this.entries]
-            this.update()
+            this.updateUser()
             this.save()
 
         } catch(error) {
@@ -42,7 +42,7 @@ export class Favorites {
         .filter(entry => entry.login !== user.login)
 
         this.entries = filteredEntries
-        this.update()
+        this.updateUser()
         this.save()
     }
 }
@@ -53,7 +53,7 @@ export class FavoritesView extends Favorites {
 
         this.tbody = this.root.querySelector('table tbody')
 
-        this.update()
+        this.updateTable()
         this.onadd()
     }
 
@@ -66,7 +66,15 @@ export class FavoritesView extends Favorites {
         }
     }
 
-    update() {
+    updateTable() {
+        this.removeAllTr()
+    
+        const tableIsEmpty = this.entries.length < 1
+    
+        tableIsEmpty ? this.updateEmptyTable() : this.updateUser()
+    }
+
+    updateUser() {
         this.removeAllTr()
 
         this.entries.forEach( user => {
@@ -90,6 +98,12 @@ export class FavoritesView extends Favorites {
         })
     }
 
+    updateEmptyTable() {
+        const emptyRow = this.createEmptyRow()
+    
+        this.tbody.appendChild(emptyRow)
+    }
+
     createRow() {
         const tr = document.createElement('tr')
 
@@ -109,6 +123,19 @@ export class FavoritesView extends Favorites {
         `
 
         return tr
+    }
+
+    createEmptyRow() {
+        const emptyRow = document.createElement('tr')
+    
+        emptyRow.innerHTML = `
+        <td class="empty-row">
+          <img src="assets/star-main.svg" alt="estrela com rosto" />
+          <span>Você não tem nenhum favorito</span>
+        </td>
+         `
+    
+        return emptyRow
     }
 
     removeAllTr() {
