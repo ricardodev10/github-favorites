@@ -70,7 +70,7 @@ If you have any feedback, please send it to me at ricardodev10@yahoo.com
 
 ## 💛 Author
 
-<img align="left" src="https://www.github.com/ricardodev10.png?size=120">
+<img align="left" src="https://www.github.com/ricardodev10.png?size=115">
 
 ### Made with ♥ by [Ricardo Junior](https://www.linkedin.com/in/ricardodev10/) :wave:
 
